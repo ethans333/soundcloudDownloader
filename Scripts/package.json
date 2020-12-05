@@ -1,0 +1,26 @@
+{
+  "name": "soundcloud-downloader",
+  "version": "1.0.0",
+  "description": "Download SoundCloud Songs with id3 data.",
+  "main": "main.js",
+  "dependencies": {
+    "fs": "0.0.1-security",
+    "got": "^11.8.0",
+    "http": "0.0.1-security",
+    "node-id3": "^0.2.1",
+    "path": "^0.12.7",
+    "puppeteer": "^5.5.0",
+    "readline": "^1.3.0",
+    "request": "^2.88.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node ./main.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "soundcloud"
+  ],
+  "author": "ethans333",
+  "license": "ISC"
+}
