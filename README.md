@@ -33,7 +33,7 @@ url1
 url2
 ...
 ```
-Note: Make sure your urls are the song's page! This format: **https://soundcloud.com/[artist-name]/[song-title]**.
+Note: Make sure your urls are the song's page! This format: **https://soundcloud.com/[artist-name]/[song-title]**
 
 Start the program and make sure you're in the ```Path to repository/soundcloudDownloader/Scripts```
 ```
