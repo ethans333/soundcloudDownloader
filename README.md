@@ -43,7 +43,8 @@ npm start
 ## Bugs :bug:
 So unfortunately when downloading a large number of files SoundCloud sort of recognizes that you're not an actual user
 and the **download loop freezes**. This is something I've attempted to fix but couldn't. In order to fix this, when it gets
-stuck **just click on the browser and downloading will resume**. You might need to do this several times.
+stuck **just click on the browser and downloading will resume**. If that doesn't work **click the play button.** You might need 
+to repeat this several times.
 
 Another issue is when you **input songs with track banner art**, for example this song [here](https://soundcloud.com/monstercat/hush-fopspeen-bound-2-u) the program
 will either not download the song or crash entirely, so it's best to **avoid using songs with track banner art. I'll perhaps
