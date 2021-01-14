@@ -41,15 +41,21 @@ const fixUrl = (url) => {
     return url;
 };
 
+const rmChars = (string) => {
+    const badChars = ['?', '"', '*', '<', '>', ':', '|'];
+    badChars.forEach(char => string = string.replace(char, ''));
+    return string
+};
+
 const downloadSong = async (url, title) => {
     await new Promise((resolve) => {
         if(!fs.existsSync('../Saved Songs')){
             fs.mkdirSync('../Saved Songs'); 
         }
-    
+        
         req
         .get(url)
-        .pipe(fs.createWriteStream(`../Saved Songs/${title}.mp3`))
+        .pipe(fs.createWriteStream(`../Saved Songs/${rmChars(title)}.mp3`))
         .on('finish', () => {
             console.log(`Downloaded ${title} ✓`);
             resolve();
@@ -68,6 +74,8 @@ const getSongInfo = async (page) => {
 
     info.albumCover = info.albumCover.replace('url("', '');
     info.albumCover = info.albumCover.replace('")', '');
+    info.title = rmChars(info.title);
+    info.artist = rmChars(info.artist);
 
     return info;
 };
@@ -78,11 +86,11 @@ const tagSong = async (info) => {
     for (const key in info) {
         info[key] = info[key].replace(/[^\x00-\x7F]/g, "");
     }
-    
+
     const tags = {
-      title: info.title,
-      artist: info.artist,
-      album: info.title,
+      title: rmChars(info.title),
+      artist: rmChars(info.artist),
+      album: rmChars(info.title),
       image: {
         mime: "jpeg",
         type: {
