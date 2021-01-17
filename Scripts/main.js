@@ -42,7 +42,7 @@ const fixUrl = (url) => {
 };
 
 const rmChars = (string) => {
-    const badChars = ['?', '"', '*', '<', '>', ':', '|'];
+    const badChars = ['?', '"', '*', '<', '>', ':', '|', '\\', '/'];
     badChars.forEach(char => string = string.replace(char, ''));
     return string
 };
